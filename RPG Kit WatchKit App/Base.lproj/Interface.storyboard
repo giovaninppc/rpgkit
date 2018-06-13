@@ -19,7 +19,7 @@
                                 <action selector="upButton" destination="AgC-eL-Hgc" id="eeu-gj-MrW"/>
                             </connections>
                         </button>
-                        <label width="136" height="64" alignment="left" text="20" textAlignment="center" id="frd-PX-7iJ">
+                        <label width="1" height="0.55000000000000004" alignment="left" text="20" textAlignment="center" id="frd-PX-7iJ">
                             <fontDescription key="font" type="system" pointSize="40"/>
                         </label>
                         <button width="1" height="30" alignment="left" title="▼" id="xzk-uM-pjW">
@@ -34,6 +34,7 @@
                     </connections>
                 </controller>
             </objects>
+            <point key="canvasLocation" x="41" y="62"/>
         </scene>
         <!--Dice-->
         <scene sceneID="J75-ch-fky">
@@ -42,7 +43,7 @@
                     <items>
                         <group width="1" height="87" alignment="left" id="ird-18-Kuk">
                             <items>
-                                <imageView height="88" alignment="left" contentMode="scaleAspectFill" id="TNR-UF-yFk"/>
+                                <label width="1" height="1" alignment="left" text="Label" textAlignment="center" id="2k7-81-z20"/>
                             </items>
                         </group>
                         <label width="133" height="15" alignment="left" text="Label" textAlignment="right" id="2wB-bN-Hf1">
@@ -56,13 +57,13 @@
                         </slider>
                     </items>
                     <connections>
-                        <outlet property="imageView" destination="TNR-UF-yFk" id="JIY-zt-Pj7"/>
+                        <outlet property="diceNumberLabel" destination="2k7-81-z20" id="gqC-6F-ObB"/>
                         <outlet property="slider" destination="Ww0-sm-LKm" id="QCf-bB-VXO"/>
                         <outlet property="whichDice" destination="2wB-bN-Hf1" id="qdh-4r-kPK"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="281" y="33"/>
+            <point key="canvasLocation" x="303" y="62"/>
         </scene>
     </scenes>
     <color key="tintColor" red="1" green="0.30196078431372547" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

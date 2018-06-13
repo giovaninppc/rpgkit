@@ -20,6 +20,7 @@
 		9B12D0BC20D14EFB00B63C05 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12D0BB20D14EFB00B63C05 /* ExtensionDelegate.swift */; };
 		9B12D0BE20D14EFB00B63C05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B12D0BD20D14EFB00B63C05 /* Assets.xcassets */; };
 		9B12D0CE20D150CB00B63C05 /* DiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12D0CD20D150CB00B63C05 /* DiceController.swift */; };
+		9B713F6F20D16D5100EAC2F1 /* WatchShaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B713F6E20D16D5100EAC2F1 /* WatchShaker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		9B12D0BD20D14EFB00B63C05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B12D0BF20D14EFB00B63C05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B12D0CD20D150CB00B63C05 /* DiceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceController.swift; sourceTree = "<group>"; };
+		9B713F6E20D16D5100EAC2F1 /* WatchShaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchShaker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				9B12D0BB20D14EFB00B63C05 /* ExtensionDelegate.swift */,
 				9B12D0BD20D14EFB00B63C05 /* Assets.xcassets */,
 				9B12D0BF20D14EFB00B63C05 /* Info.plist */,
+				9B713F6E20D16D5100EAC2F1 /* WatchShaker.swift */,
 			);
 			path = "RPG Kit WatchKit Extension";
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B12D0BC20D14EFB00B63C05 /* ExtensionDelegate.swift in Sources */,
+				9B713F6F20D16D5100EAC2F1 /* WatchShaker.swift in Sources */,
 				9B12D0BA20D14EFB00B63C05 /* InterfaceController.swift in Sources */,
 				9B12D0CE20D150CB00B63C05 /* DiceController.swift in Sources */,
 			);
@@ -402,6 +406,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRIP_BITCODE_FROM_COPIED_FILES = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -455,6 +460,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				STRIP_BITCODE_FROM_COPIED_FILES = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;

@@ -37,13 +37,18 @@ class InterfaceController: WKInterfaceController {
     }
     
     @IBAction func upButton() {
+        WKInterfaceDevice.current().play(.click)
         life += 1
     }
     
     @IBAction func downButton() {
         life -= 1
+        if life < 0 {
+            life = 0
+            WKInterfaceDevice.current().play(.failure)
+        } else {
+            WKInterfaceDevice.current().play(.click)
+        }
     }
     
-    
-
 }

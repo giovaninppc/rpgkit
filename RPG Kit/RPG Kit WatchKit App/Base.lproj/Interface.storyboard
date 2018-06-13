@@ -1,15 +1,67 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14031"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Life Counter-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller title="Life Counter" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="RPG_Kit_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <button width="1" height="30" alignment="left" title="▲" id="kBB-JZ-aOz">
+                            <connections>
+                                <action selector="upButton" destination="AgC-eL-Hgc" id="eeu-gj-MrW"/>
+                            </connections>
+                        </button>
+                        <label width="136" height="64" alignment="left" text="20" textAlignment="center" id="frd-PX-7iJ">
+                            <fontDescription key="font" type="system" pointSize="40"/>
+                        </label>
+                        <button width="1" height="30" alignment="left" title="▼" id="xzk-uM-pjW">
+                            <connections>
+                                <action selector="downButton" destination="AgC-eL-Hgc" id="SIo-qY-DSX"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="lifeLabel" destination="frd-PX-7iJ" id="Qjj-Zf-XqW"/>
+                        <segue destination="mI0-Fn-W1B" kind="relationship" relationship="nextPage" id="4gD-Jt-d8G"/>
+                    </connections>
+                </controller>
             </objects>
+        </scene>
+        <!--Dice-->
+        <scene sceneID="J75-ch-fky">
+            <objects>
+                <controller title="Dice" id="mI0-Fn-W1B" customClass="DiceController" customModule="RPG_Kit_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="87" alignment="left" id="ird-18-Kuk">
+                            <items>
+                                <imageView height="88" alignment="left" contentMode="scaleAspectFill" id="TNR-UF-yFk"/>
+                            </items>
+                        </group>
+                        <label width="133" height="15" alignment="left" text="Label" textAlignment="right" id="2wB-bN-Hf1">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <slider width="1" alignment="left" value="3" maximum="7" steps="9" id="Ww0-sm-LKm">
+                            <connections>
+                                <action selector="sliderChangeValue:" destination="mI0-Fn-W1B" id="OF0-6n-R6F"/>
+                            </connections>
+                        </slider>
+                    </items>
+                    <connections>
+                        <outlet property="imageView" destination="TNR-UF-yFk" id="JIY-zt-Pj7"/>
+                        <outlet property="slider" destination="Ww0-sm-LKm" id="QCf-bB-VXO"/>
+                        <outlet property="whichDice" destination="2wB-bN-Hf1" id="qdh-4r-kPK"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="281" y="33"/>
         </scene>
     </scenes>
 </document>

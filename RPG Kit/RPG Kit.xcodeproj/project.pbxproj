@@ -19,6 +19,7 @@
 		9B12D0BA20D14EFB00B63C05 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12D0B920D14EFB00B63C05 /* InterfaceController.swift */; };
 		9B12D0BC20D14EFB00B63C05 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12D0BB20D14EFB00B63C05 /* ExtensionDelegate.swift */; };
 		9B12D0BE20D14EFB00B63C05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B12D0BD20D14EFB00B63C05 /* Assets.xcassets */; };
+		9B12D0CE20D150CB00B63C05 /* DiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12D0CD20D150CB00B63C05 /* DiceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		9B12D0BB20D14EFB00B63C05 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		9B12D0BD20D14EFB00B63C05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B12D0BF20D14EFB00B63C05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B12D0CD20D150CB00B63C05 /* DiceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				9B12D0B920D14EFB00B63C05 /* InterfaceController.swift */,
+				9B12D0CD20D150CB00B63C05 /* DiceController.swift */,
 				9B12D0BB20D14EFB00B63C05 /* ExtensionDelegate.swift */,
 				9B12D0BD20D14EFB00B63C05 /* Assets.xcassets */,
 				9B12D0BF20D14EFB00B63C05 /* Info.plist */,
@@ -297,6 +300,7 @@
 			files = (
 				9B12D0BC20D14EFB00B63C05 /* ExtensionDelegate.swift in Sources */,
 				9B12D0BA20D14EFB00B63C05 /* InterfaceController.swift in Sources */,
+				9B12D0CE20D150CB00B63C05 /* DiceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -43,7 +43,15 @@
                     <items>
                         <group width="1" height="87" alignment="left" id="ird-18-Kuk">
                             <items>
-                                <imageView width="1" height="1" alignment="left" contentMode="scaleAspectFit" id="TjT-UQ-nvL"/>
+                                <imageView width="1" height="1" alignment="left" contentMode="scaleAspectFit" id="TjT-UQ-nvL">
+                                    <gestureRecognizers>
+                                        <tapGestureRecognizer id="d6t-Zd-vMh">
+                                            <connections>
+                                                <action selector="tapDice:" destination="mI0-Fn-W1B" id="cCk-1y-9QM"/>
+                                            </connections>
+                                        </tapGestureRecognizer>
+                                    </gestureRecognizers>
+                                </imageView>
                             </items>
                         </group>
                         <label width="133" height="15" alignment="left" text="Label" textAlignment="right" id="2wB-bN-Hf1">

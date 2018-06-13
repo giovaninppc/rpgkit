@@ -17,7 +17,7 @@ class DiceController: WKInterfaceController {
     @IBOutlet var image: WKInterfaceImage!
     
     let diceArray = [2, 4, 6, 8, 10, 12, 20, 100]
-    let diceName = ["Coin (D2)", "D4", "D6", "D8", "D10", "D12", "D20", "D100"]
+    let diceName = ["D2", "D4", "D6", "D8", "D10", "D12", "D20", "D100"]
     
     var selectedDice: Int = 0 {
         didSet {
@@ -31,6 +31,7 @@ class DiceController: WKInterfaceController {
         super.awake(withContext: context)
         // Configure interface objects here.
         slider.setNumberOfSteps(diceArray.count - 1)
+        slider.setValue(2.0)
         whichDice.setText("\(diceName[2])")
         selectedDice = 2
         image.stopAnimating()
@@ -68,7 +69,7 @@ class DiceController: WKInterfaceController {
         image.setImageNamed("\(diceName[selectedDice])-")
         image.startAnimatingWithImages(in: NSRange(location: 0,
                                                    length: diceArray[selectedDice]-1),
-                                       duration: 0.2, repeatCount: 0)
+                                       duration: 0.03 * Double(diceArray[selectedDice]), repeatCount: 0)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
             self.stopDice()
         })
@@ -81,11 +82,17 @@ class DiceController: WKInterfaceController {
         image.setImage(UIImage(named: "\(diceName[selectedDice])-\(random)"))
     }
     
+    /// Tapped Dice
+    @IBAction func tapDice(_ sender: Any) {
+        WKInterfaceDevice.current().play(.click)
+        shakeDice()
+    }
+    
 }
 
 extension DiceController: WatchShakerDelegate {
     func watchShakerDidShake(_ watchShaker: WatchShaker) {
-        WKInterfaceDevice.current().play(.start)
+        WKInterfaceDevice.current().play(.click)
         shakeDice()
     }
     

@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -47,10 +49,17 @@
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="GGY-Dg-Mfs">
                                 <rect key="frame" x="176" y="600" width="23" height="37"/>
                             </pageControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Life Counter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCo-Y5-NXf">
+                                <rect key="frame" x="20" y="30" width="137" height="31.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="1" green="0.30196078430000001" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5Hu-MB-7hq" firstAttribute="centerX" secondItem="xxH-sY-Few" secondAttribute="centerX" id="0Cb-10-Z6N"/>
+                            <constraint firstItem="yCo-Y5-NXf" firstAttribute="top" secondItem="Uee-0j-aNJ" secondAttribute="top" constant="10" id="CzW-X2-QJP"/>
                             <constraint firstItem="xxH-sY-Few" firstAttribute="top" secondItem="5Hu-MB-7hq" secondAttribute="bottom" constant="10" id="FOZ-7j-a2s"/>
                             <constraint firstItem="U6a-rF-ezh" firstAttribute="top" secondItem="xxH-sY-Few" secondAttribute="bottom" constant="10" id="Gro-k1-LgY"/>
                             <constraint firstItem="xxH-sY-Few" firstAttribute="centerY" secondItem="Uee-0j-aNJ" secondAttribute="centerY" id="JYX-NP-Z4z"/>
@@ -59,6 +68,7 @@
                             <constraint firstItem="5Hu-MB-7hq" firstAttribute="width" secondItem="xxH-sY-Few" secondAttribute="width" id="UbG-lB-3i1"/>
                             <constraint firstItem="GGY-Dg-Mfs" firstAttribute="centerX" secondItem="Uee-0j-aNJ" secondAttribute="centerX" id="ZvS-SZ-Ddh"/>
                             <constraint firstItem="U6a-rF-ezh" firstAttribute="centerX" secondItem="xxH-sY-Few" secondAttribute="centerX" id="gaE-MK-eXW"/>
+                            <constraint firstItem="yCo-Y5-NXf" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="20" id="nM9-8D-kiF"/>
                             <constraint firstItem="xxH-sY-Few" firstAttribute="centerX" secondItem="Uee-0j-aNJ" secondAttribute="centerX" id="tmA-zC-CXe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Uee-0j-aNJ"/>
@@ -74,22 +84,73 @@
         <!--diceRoller-->
         <scene sceneID="8eU-fu-jzs">
             <objects>
-                <viewController storyboardIdentifier="diceRoller" title="diceRoller" id="5j1-PM-fzf" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="diceRoller" title="diceRoller" id="5j1-PM-fzf" customClass="DiceViewController" customModule="RPG_Kit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V71-wM-q6B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="OJg-A6-sQw">
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="OJg-A6-sQw">
                                 <rect key="frame" x="176" y="600" width="23" height="37"/>
                             </pageControl>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="0.0" maxValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="hJR-43-VeR">
+                                <rect key="frame" x="35" y="530" width="304" height="31"/>
+                                <color key="tintColor" red="1" green="0.30196078430000001" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="sliderEditingDidEnd:" destination="5j1-PM-fzf" eventType="editingDidEnd" id="MLR-U8-ctZ"/>
+                                    <action selector="sliderValueChanged:" destination="5j1-PM-fzf" eventType="valueChanged" id="Yv6-Fp-Nyk"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D6" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Kn-RZ-GSc">
+                                <rect key="frame" x="314" y="474" width="23" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="D10-1" translatesAutoresizingMaskIntoConstraints="NO" id="mqx-5z-5c8">
+                                <rect key="frame" x="56" y="120" width="262.5" height="262.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mqx-5z-5c8" secondAttribute="height" multiplier="1:1" id="p4X-FI-wHB"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYy-OZ-7E7">
+                                <rect key="frame" x="56" y="120" width="262.5" height="262.5"/>
+                                <connections>
+                                    <action selector="diceTap:" destination="5j1-PM-fzf" eventType="touchUpInside" id="fc0-iI-oug"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dice Roller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDx-oi-A8j">
+                                <rect key="frame" x="20" y="30" width="120" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="1" green="0.30196078430000001" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
+                            <constraint firstItem="mYy-OZ-7E7" firstAttribute="centerY" secondItem="mqx-5z-5c8" secondAttribute="centerY" id="37R-vB-qlk"/>
+                            <constraint firstItem="mqx-5z-5c8" firstAttribute="top" secondItem="wYl-Kf-IhU" secondAttribute="top" constant="100" id="60f-0f-2Cg"/>
+                            <constraint firstItem="hJR-43-VeR" firstAttribute="top" secondItem="9Kn-RZ-GSc" secondAttribute="bottom" constant="35" id="IEU-Eh-cqp"/>
+                            <constraint firstItem="OJg-A6-sQw" firstAttribute="top" secondItem="hJR-43-VeR" secondAttribute="bottom" constant="40" id="Ioa-E9-lhf"/>
+                            <constraint firstItem="hJR-43-VeR" firstAttribute="centerX" secondItem="wYl-Kf-IhU" secondAttribute="centerX" id="Oac-TY-uM3"/>
+                            <constraint firstItem="oDx-oi-A8j" firstAttribute="leading" secondItem="wYl-Kf-IhU" secondAttribute="leading" constant="20" id="Y1I-Ar-wRC"/>
                             <constraint firstItem="wYl-Kf-IhU" firstAttribute="bottom" secondItem="OJg-A6-sQw" secondAttribute="bottom" constant="30" id="aQu-YU-VEn"/>
+                            <constraint firstItem="mYy-OZ-7E7" firstAttribute="height" secondItem="mqx-5z-5c8" secondAttribute="height" id="bOk-vq-7v6"/>
+                            <constraint firstItem="mYy-OZ-7E7" firstAttribute="width" secondItem="mqx-5z-5c8" secondAttribute="width" id="eG6-6M-RCS"/>
                             <constraint firstItem="OJg-A6-sQw" firstAttribute="centerX" secondItem="wYl-Kf-IhU" secondAttribute="centerX" id="icB-0x-ZXB"/>
+                            <constraint firstItem="oDx-oi-A8j" firstAttribute="top" secondItem="wYl-Kf-IhU" secondAttribute="top" constant="10" id="pO5-Fr-0pf"/>
+                            <constraint firstItem="mqx-5z-5c8" firstAttribute="centerX" secondItem="wYl-Kf-IhU" secondAttribute="centerX" id="uIh-Is-AAX"/>
+                            <constraint firstItem="mYy-OZ-7E7" firstAttribute="centerX" secondItem="mqx-5z-5c8" secondAttribute="centerX" id="uzT-6j-p4I"/>
+                            <constraint firstItem="hJR-43-VeR" firstAttribute="width" secondItem="V71-wM-q6B" secondAttribute="width" multiplier="0.8" id="xq8-Hg-71k"/>
+                            <constraint firstItem="9Kn-RZ-GSc" firstAttribute="trailing" secondItem="hJR-43-VeR" secondAttribute="trailing" id="yBs-Ck-6pC"/>
+                            <constraint firstItem="mqx-5z-5c8" firstAttribute="width" secondItem="V71-wM-q6B" secondAttribute="width" multiplier="0.7" id="zGh-d6-fee"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wYl-Kf-IhU"/>
                     </view>
+                    <connections>
+                        <outlet property="diceLabel" destination="9Kn-RZ-GSc" id="Tvl-sJ-x0N"/>
+                        <outlet property="image" destination="mqx-5z-5c8" id="EoW-KF-WrE"/>
+                        <outlet property="slider" destination="hJR-43-VeR" id="Phh-Gq-Sls"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xxf-fu-oxb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -104,4 +165,7 @@
             <point key="canvasLocation" x="26" y="86"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="D10-1" width="200" height="200"/>
+    </resources>
 </document>

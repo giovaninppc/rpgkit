@@ -23,6 +23,7 @@
 		9B713F6F20D16D5100EAC2F1 /* WatchShaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B713F6E20D16D5100EAC2F1 /* WatchShaker.swift */; };
 		9B713F7120D19FA500EAC2F1 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B713F7020D19FA500EAC2F1 /* PageController.swift */; };
 		9B713F7420D1A56300EAC2F1 /* DiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B713F7320D1A56300EAC2F1 /* DiceViewController.swift */; };
+		9B713F7720D1AC5500EAC2F1 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B713F7620D1AC5500EAC2F1 /* UserDefaultsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		9B713F6E20D16D5100EAC2F1 /* WatchShaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchShaker.swift; sourceTree = "<group>"; };
 		9B713F7020D19FA500EAC2F1 /* PageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
 		9B713F7320D1A56300EAC2F1 /* DiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceViewController.swift; sourceTree = "<group>"; };
+		9B713F7620D1AC5500EAC2F1 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				9B12D09F20D14EFA00B63C05 /* LaunchScreen.storyboard */,
 				9B12D09D20D14EFA00B63C05 /* Assets.xcassets */,
 				9B12D0A220D14EFA00B63C05 /* Info.plist */,
+				9B713F7620D1AC5500EAC2F1 /* UserDefaultsManager.swift */,
 			);
 			path = "RPG Kit";
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B12D09920D14EF900B63C05 /* LifeViewController.swift in Sources */,
+				9B713F7720D1AC5500EAC2F1 /* UserDefaultsManager.swift in Sources */,
 				9B12D09720D14EF900B63C05 /* AppDelegate.swift in Sources */,
 				9B713F7120D19FA500EAC2F1 /* PageController.swift in Sources */,
 				9B713F7420D1A56300EAC2F1 /* DiceViewController.swift in Sources */,

@@ -21,6 +21,11 @@ class LifeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        if UserDefaultsManager.getNumberExecution() == 1 {
+            let alert = UIAlertController(title: "Welcome", message: "This app is supposed to help players on RPG tables. New features are comming but enjoy the Counter and dices, as also our Apple Watch app!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {

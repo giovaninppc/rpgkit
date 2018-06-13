@@ -21,6 +21,8 @@
 		9B12D0BE20D14EFB00B63C05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B12D0BD20D14EFB00B63C05 /* Assets.xcassets */; };
 		9B12D0CE20D150CB00B63C05 /* DiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12D0CD20D150CB00B63C05 /* DiceController.swift */; };
 		9B713F6F20D16D5100EAC2F1 /* WatchShaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B713F6E20D16D5100EAC2F1 /* WatchShaker.swift */; };
+		9B713F7120D19FA500EAC2F1 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B713F7020D19FA500EAC2F1 /* PageController.swift */; };
+		9B713F7220D1A12800EAC2F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B12D0BD20D14EFB00B63C05 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,7 @@
 		9B12D0BF20D14EFB00B63C05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B12D0CD20D150CB00B63C05 /* DiceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceController.swift; sourceTree = "<group>"; };
 		9B713F6E20D16D5100EAC2F1 /* WatchShaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchShaker.swift; sourceTree = "<group>"; };
+		9B713F7020D19FA500EAC2F1 /* PageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				9B12D09620D14EF900B63C05 /* AppDelegate.swift */,
+				9B713F7020D19FA500EAC2F1 /* PageController.swift */,
 				9B12D09820D14EF900B63C05 /* ViewController.swift */,
 				9B12D09A20D14EF900B63C05 /* Main.storyboard */,
 				9B12D09D20D14EFA00B63C05 /* Assets.xcassets */,
@@ -264,6 +268,7 @@
 			files = (
 				9B12D0A120D14EFA00B63C05 /* LaunchScreen.storyboard in Resources */,
 				9B12D09E20D14EFA00B63C05 /* Assets.xcassets in Resources */,
+				9B713F7220D1A12800EAC2F1 /* Assets.xcassets in Resources */,
 				9B12D09C20D14EF900B63C05 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +299,7 @@
 			files = (
 				9B12D09920D14EF900B63C05 /* ViewController.swift in Sources */,
 				9B12D09720D14EF900B63C05 /* AppDelegate.swift in Sources */,
+				9B713F7120D19FA500EAC2F1 /* PageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

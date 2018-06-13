@@ -13,13 +13,59 @@
         <!--lifeCounter-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="lifeCounter" title="lifeCounter" id="BYZ-38-t0r" customClass="ViewController" customModule="RPG_Kit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="lifeCounter" title="lifeCounter" id="BYZ-38-t0r" customClass="LifeViewController" customModule="RPG_Kit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxH-sY-Few">
+                                <rect key="frame" x="128" y="283.5" width="118" height="120"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Hu-MB-7hq">
+                                <rect key="frame" x="128" y="201.5" width="118" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="▲">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="upButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Phk-Se-2sX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6a-rF-ezh">
+                                <rect key="frame" x="128" y="413.5" width="118" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="▼">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="downButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CCb-rH-4PX"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="GGY-Dg-Mfs">
+                                <rect key="frame" x="176" y="600" width="23" height="37"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5Hu-MB-7hq" firstAttribute="centerX" secondItem="xxH-sY-Few" secondAttribute="centerX" id="0Cb-10-Z6N"/>
+                            <constraint firstItem="xxH-sY-Few" firstAttribute="top" secondItem="5Hu-MB-7hq" secondAttribute="bottom" constant="10" id="FOZ-7j-a2s"/>
+                            <constraint firstItem="U6a-rF-ezh" firstAttribute="top" secondItem="xxH-sY-Few" secondAttribute="bottom" constant="10" id="Gro-k1-LgY"/>
+                            <constraint firstItem="xxH-sY-Few" firstAttribute="centerY" secondItem="Uee-0j-aNJ" secondAttribute="centerY" id="JYX-NP-Z4z"/>
+                            <constraint firstItem="Uee-0j-aNJ" firstAttribute="bottom" secondItem="GGY-Dg-Mfs" secondAttribute="bottom" constant="30" id="M4P-Kq-Pp9"/>
+                            <constraint firstItem="U6a-rF-ezh" firstAttribute="width" secondItem="xxH-sY-Few" secondAttribute="width" id="MZR-dR-Tp5"/>
+                            <constraint firstItem="5Hu-MB-7hq" firstAttribute="width" secondItem="xxH-sY-Few" secondAttribute="width" id="UbG-lB-3i1"/>
+                            <constraint firstItem="GGY-Dg-Mfs" firstAttribute="centerX" secondItem="Uee-0j-aNJ" secondAttribute="centerX" id="ZvS-SZ-Ddh"/>
+                            <constraint firstItem="U6a-rF-ezh" firstAttribute="centerX" secondItem="xxH-sY-Few" secondAttribute="centerX" id="gaE-MK-eXW"/>
+                            <constraint firstItem="xxH-sY-Few" firstAttribute="centerX" secondItem="Uee-0j-aNJ" secondAttribute="centerX" id="tmA-zC-CXe"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Uee-0j-aNJ"/>
                     </view>
+                    <connections>
+                        <outlet property="numberLabel" destination="xxH-sY-Few" id="3kS-et-oTm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -32,7 +78,16 @@
                     <view key="view" contentMode="scaleToFill" id="V71-wM-q6B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="OJg-A6-sQw">
+                                <rect key="frame" x="176" y="600" width="23" height="37"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="wYl-Kf-IhU" firstAttribute="bottom" secondItem="OJg-A6-sQw" secondAttribute="bottom" constant="30" id="aQu-YU-VEn"/>
+                            <constraint firstItem="OJg-A6-sQw" firstAttribute="centerX" secondItem="wYl-Kf-IhU" secondAttribute="centerX" id="icB-0x-ZXB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wYl-Kf-IhU"/>
                     </view>
                 </viewController>

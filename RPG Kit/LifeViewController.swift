@@ -8,8 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LifeViewController: UIViewController {
 
+    @IBOutlet weak var numberLabel: UILabel!
+    
+    var counter: Int = 20 {
+        didSet {
+            numberLabel.text = "\(counter)"
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,5 +28,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func upButton(_ sender: Any) {
+        counter += 1
+    }
+    
+    @IBAction func downButton(_ sender: Any) {
+        counter -= 1
+        if counter < 0 {
+            counter = 0
+        }
+    }
+    
 }
 

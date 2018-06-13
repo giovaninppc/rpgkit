@@ -16,8 +16,8 @@ class DiceController: WKInterfaceController {
     @IBOutlet var whichDice: WKInterfaceLabel!
     @IBOutlet var image: WKInterfaceImage!
     
-    let diceArray = [2, 4, 6, 8, 10, 12, 20, 100]
-    let diceName = ["D2", "D4", "D6", "D8", "D10", "D12", "D20", "D100"]
+    let diceArray = [2, 4, 6, 8, 10, 12, 20]
+    let diceName = ["D2", "D4", "D6", "D8", "D10", "D12", "D20"]
     
     var selectedDice: Int = 0 {
         didSet {

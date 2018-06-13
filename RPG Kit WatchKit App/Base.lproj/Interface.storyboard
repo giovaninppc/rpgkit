@@ -57,7 +57,7 @@
                         <label width="133" height="15" alignment="left" text="Label" textAlignment="right" id="2wB-bN-Hf1">
                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                         </label>
-                        <slider width="1" alignment="left" value="3" maximum="7" steps="7" id="Ww0-sm-LKm">
+                        <slider width="1" alignment="left" value="3" maximum="6" steps="6" id="Ww0-sm-LKm">
                             <color key="color" red="1" green="0.30196078430000001" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="sliderChangeValue:" destination="mI0-Fn-W1B" id="OF0-6n-R6F"/>

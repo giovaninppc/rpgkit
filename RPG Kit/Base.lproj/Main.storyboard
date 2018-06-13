@@ -50,7 +50,7 @@
                                 <rect key="frame" x="176" y="600" width="23" height="37"/>
                             </pageControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Life Counter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCo-Y5-NXf">
-                                <rect key="frame" x="20" y="30" width="137" height="31.5"/>
+                                <rect key="frame" x="20" y="30" width="345" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="1" green="0.30196078430000001" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -65,6 +65,7 @@
                             <constraint firstItem="xxH-sY-Few" firstAttribute="centerY" secondItem="Uee-0j-aNJ" secondAttribute="centerY" id="JYX-NP-Z4z"/>
                             <constraint firstItem="Uee-0j-aNJ" firstAttribute="bottom" secondItem="GGY-Dg-Mfs" secondAttribute="bottom" constant="30" id="M4P-Kq-Pp9"/>
                             <constraint firstItem="U6a-rF-ezh" firstAttribute="width" secondItem="xxH-sY-Few" secondAttribute="width" id="MZR-dR-Tp5"/>
+                            <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="yCo-Y5-NXf" secondAttribute="trailing" constant="10" id="OoP-f3-yrz"/>
                             <constraint firstItem="5Hu-MB-7hq" firstAttribute="width" secondItem="xxH-sY-Few" secondAttribute="width" id="UbG-lB-3i1"/>
                             <constraint firstItem="GGY-Dg-Mfs" firstAttribute="centerX" secondItem="Uee-0j-aNJ" secondAttribute="centerX" id="ZvS-SZ-Ddh"/>
                             <constraint firstItem="U6a-rF-ezh" firstAttribute="centerX" secondItem="xxH-sY-Few" secondAttribute="centerX" id="gaE-MK-eXW"/>
@@ -101,7 +102,7 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D6" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Kn-RZ-GSc">
-                                <rect key="frame" x="314" y="474" width="23" height="21"/>
+                                <rect key="frame" x="50" y="474" width="287" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -119,7 +120,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dice Roller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDx-oi-A8j">
-                                <rect key="frame" x="20" y="30" width="120" height="32"/>
+                                <rect key="frame" x="20" y="30" width="345" height="32"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="1" green="0.30196078430000001" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -128,7 +129,9 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="mYy-OZ-7E7" firstAttribute="centerY" secondItem="mqx-5z-5c8" secondAttribute="centerY" id="37R-vB-qlk"/>
+                            <constraint firstItem="wYl-Kf-IhU" firstAttribute="trailing" secondItem="oDx-oi-A8j" secondAttribute="trailing" constant="10" id="514-1l-UEK"/>
                             <constraint firstItem="mqx-5z-5c8" firstAttribute="top" secondItem="wYl-Kf-IhU" secondAttribute="top" constant="100" id="60f-0f-2Cg"/>
+                            <constraint firstItem="9Kn-RZ-GSc" firstAttribute="leading" secondItem="wYl-Kf-IhU" secondAttribute="leading" constant="50" id="A4u-cs-GVP"/>
                             <constraint firstItem="hJR-43-VeR" firstAttribute="top" secondItem="9Kn-RZ-GSc" secondAttribute="bottom" constant="35" id="IEU-Eh-cqp"/>
                             <constraint firstItem="OJg-A6-sQw" firstAttribute="top" secondItem="hJR-43-VeR" secondAttribute="bottom" constant="40" id="Ioa-E9-lhf"/>
                             <constraint firstItem="hJR-43-VeR" firstAttribute="centerX" secondItem="wYl-Kf-IhU" secondAttribute="centerX" id="Oac-TY-uM3"/>

@@ -14,20 +14,26 @@ class DiceController: WKInterfaceController {
 
     @IBOutlet var slider: WKInterfaceSlider!
     @IBOutlet var whichDice: WKInterfaceLabel!
-    @IBOutlet var diceNumberLabel: WKInterfaceLabel!
+    @IBOutlet var image: WKInterfaceImage!
     
-    let diceArray = [2, 4, 8, 10, 12, 20, 50, 100]
-    let diceName = ["Coin (D2)", "D4", "D8", "D10", "D12", "D20", "D50", "D100"]
-    var lastValue: Int = 0
+    let diceArray = [2, 4, 6, 8, 10, 12, 20, 100]
+    let diceName = ["Coin (D2)", "D4", "D6", "D8", "D10", "D12", "D20", "D100"]
     
-    var shaker: WatchShaker = WatchShaker(shakeSensibility: .shakeSensibilityNormal, delay: 0.2)
+    var selectedDice: Int = 0 {
+        didSet {
+            image.setImage(UIImage(named: "\(diceName[selectedDice])-1"))
+        }
+    }
+    
+    var shaker: WatchShaker = WatchShaker(shakeSensibility: .shakeSensibilityHardest, delay: 0.2)
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         // Configure interface objects here.
         slider.setNumberOfSteps(diceArray.count - 1)
-        whichDice.setText("\(diceName[3])")
-        lastValue = 3
+        whichDice.setText("\(diceName[2])")
+        selectedDice = 2
+        image.stopAnimating()
     }
 
     override func willActivate() {
@@ -45,7 +51,7 @@ class DiceController: WKInterfaceController {
     
     @IBAction func sliderChangeValue(_ value: Float) {
         var intValue = Int(value)
-        if intValue == lastValue {
+        if intValue == selectedDice {
             WKInterfaceDevice.current().play(.retry)
         } else if intValue < 0 {
             intValue = 0
@@ -53,17 +59,34 @@ class DiceController: WKInterfaceController {
         } else {
             WKInterfaceDevice.current().play(.click)
         }
-        lastValue = intValue
+        selectedDice = intValue
         whichDice.setText("\(diceName[intValue])")
+    }
+    
+    /// Make dice animation
+    func shakeDice() {
+        image.setImageNamed("\(diceName[selectedDice])-")
+        image.startAnimatingWithImages(in: NSRange(location: 0,
+                                                   length: diceArray[selectedDice]-1),
+                                       duration: 0.2, repeatCount: 0)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+            self.stopDice()
+        })
+    }
+    
+    /// Stop dice animation and set image to random number
+    func stopDice() {
+        image.stopAnimating()
+        let random = arc4random_uniform(UInt32(diceArray[selectedDice])) + 1
+        image.setImage(UIImage(named: "\(diceName[selectedDice])-\(random)"))
     }
     
 }
 
 extension DiceController: WatchShakerDelegate {
     func watchShakerDidShake(_ watchShaker: WatchShaker) {
-        print("YOU HAVE SHAKEN YOUR ⌚️⌚️⌚️")
-        WKInterfaceDevice.current().play(.failure)
-        diceNumberLabel.setText("SHAKE")
+        WKInterfaceDevice.current().play(.start)
+        shakeDice()
     }
     
     func watchShaker(_ watchShaker: WatchShaker, didFailWith error: Error) {

@@ -43,7 +43,7 @@
                     <items>
                         <group width="1" height="87" alignment="left" id="ird-18-Kuk">
                             <items>
-                                <label width="1" height="1" alignment="left" text="Label" textAlignment="center" id="2k7-81-z20"/>
+                                <imageView width="1" height="1" alignment="left" contentMode="scaleAspectFit" id="TjT-UQ-nvL"/>
                             </items>
                         </group>
                         <label width="133" height="15" alignment="left" text="Label" textAlignment="right" id="2wB-bN-Hf1">
@@ -57,7 +57,7 @@
                         </slider>
                     </items>
                     <connections>
-                        <outlet property="diceNumberLabel" destination="2k7-81-z20" id="gqC-6F-ObB"/>
+                        <outlet property="image" destination="TjT-UQ-nvL" id="Svz-fD-CIT"/>
                         <outlet property="slider" destination="Ww0-sm-LKm" id="QCf-bB-VXO"/>
                         <outlet property="whichDice" destination="2wB-bN-Hf1" id="qdh-4r-kPK"/>
                     </connections>
